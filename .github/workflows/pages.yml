@@ -70,6 +70,7 @@ jobs:
         with:
           pattern: template_*_pdf
           path: docs
+          merge-multiple: true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
