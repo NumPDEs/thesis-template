@@ -55,6 +55,7 @@ jobs:
           name: template_${{ matrix.type }}_pdf
           path: template_${{ matrix.type }}.pdf
   deploy:
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
