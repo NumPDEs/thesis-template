@@ -1,0 +1,53 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Nützliche Makros
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{NumPDEsMacros}[2024/05/13 Makro Sammlung]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Lade Pakete
+
+\RequirePackage{etoolbox}
+\RequirePackage{mathtools}
+\RequirePackage{xspace}
+\RequirePackage{pgffor}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Revision command
+
+\def\revision#1{{\color{red}#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Einige nützliche und empfohlene mathematische Operatoren und Symbole
+
+\let\div\relax
+\DeclareMathOperator{\div}{\mathrm{div}}
+\renewcommand{\d}[1]{\mathop{}\!\mathrm{d}#1}
+\DeclareMathOperator{\conv}{\mathrm{conv}}
+\DeclareMathOperator{\diam}{\mathrm{diam}}
+\DeclareMathOperator{\refine}{\mathtt{refine}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\T}{\mathbb{T}}
+
+\newcommand{\vvvert}{|\mkern-1.5mu|\mkern-1.5mu|}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% stackrel-like convenience command
+
+\newcommand{\eqreff}{\@ifstar\@eqreffstar\@eqreff}
+\def\@eqreff#1#2{\stackrel{\eqref{#1}}{#2}}
+\def\@eqreffstar#1#2{\stackrel{\mathclap{\eqref{#1}}}{#2}}

@@ -1,0 +1,35 @@
+
+	\node[regular polygon, regular polygon sides=6, fill = TUBlue!10!white, draw, minimum size=3cm](m) at (0,0) {};
+	\node[above=4pt] (A) at (0,0) {$z$};	
+	
+	\draw [densely dotted, black] (m.corner 1) -- (0,0);
+	\draw [densely dotted, black] (m.corner 2) -- (0,0);
+	\draw [densely dotted, black] (m.corner 3) -- (0,0);
+	\draw [densely dotted, black] (m.corner 4) -- (0,0);
+	\draw [densely dotted, black] (m.corner 5) -- (0,0);
+	\draw [densely dotted, black] (m.corner 6) -- (0,0);
+	
+	\fill [TUBlue] (0,0) circle (3pt);
+	\draw [black] (0,0) circle (3pt);
+	\fill [TUBlue] ($(m.corner 1)!0.5!(0,0)$) circle (3pt);
+	\draw [black] ($(m.corner 1)!0.5!(0,0)$) circle (3pt);
+	\fill [TUBlue] ($(m.corner 2)!0.5!(0,0)$) circle (3pt);
+	\draw [black] ($(m.corner 2)!0.5!(0,0)$) circle (3pt);
+	\fill [TUBlue] ($(m.corner 3)!0.5!(0,0)$) circle (3pt);
+	\draw [black] ($(m.corner 3)!0.5!(0,0)$) circle (3pt);
+	\fill [TUBlue] ($(m.corner 4)!0.5!(0,0)$) circle (3pt);
+	\draw [black] ($(m.corner 4)!0.5!(0,0)$) circle (3pt);
+	\fill [TUBlue] ($(m.corner 5)!0.5!(0,0)$) circle (3pt);
+	\draw [black] ($(m.corner 5)!0.5!(0,0)$) circle (3pt);
+	\fill [TUBlue] ($(m.corner 6)!0.5!(0,0)$) circle (3pt);
+	\draw [black] ($(m.corner 6)!0.5!(0,0)$) circle (3pt);
+	
+	\node[right=1pt] (Omega) at (m.side 5) {$\omega_{L,z}$};
+	
+	\matrix [column sep=0.05, right = 65pt] (D) at (0,0)
+	{
+		\fill [TUBlue, centered] (0,0) circle (3pt); & \node[right]{degrees of freedom}; \\
+		\node[centered]{$z$}; &  \node[right]{patch vertex in $\mathcal{V}_L$}; \\
+		\node[centered]{$\cdots$}; & \node[right]{patch $\mathcal{T}_{L,z}$};  \\
+		\node[centered]{---};  & \node[right]{patch subdomain $\omega_{L,z}$}; \\
+	};

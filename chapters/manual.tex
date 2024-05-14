@@ -1,0 +1,297 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+% Der Befehl \ifSubfilesClassLoaded kann dafür genutzt werden, um gewisse Befehle nur dann auszuführen, 
+% wenn die Datei als Subfile geladen wird. Hier zum Beispiel, wird die Kapitelnummer auf 2 gesetzt, 
+% wenn die Datei eigenständig kompiliert wird.
+\ifSubfilesClassLoaded{
+  \setcounter{chapter}{1}
+}{}
+
+\chapter{Los geht's}
+\label{chapter:content}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Hier beginnt die Arbeit}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+  \item Üblicherweise mit den benötigten Notationen und aus der Literatur bekannten Resultaten etc.
+  \item Grundlegende Definitionen und Resultate der Mathematik-Grundvorlesungen (z.B.\ Eigenwerte, Satz von Taylor, Banach-Räume etc.) dürfen Sie voraussetzen. Resultate der höheren Vorlesungen (z.B.\ Lemma von Lax--Milgram, Definition der Sobolev-Räume) können Sie (mit Referenz und \emph{ohne Beweis}) wiederholen.
+  \item Wesentlich ist, dass Sie die benötigte Notation \emph{eindeutig} einführen. Verwenden Sie z.B.\ \emph{entweder} $W^{1,2}(\Omega)$ \emph{oder} $H^1(\Omega)$ für den Sobolev-Raum.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ein paar allgemeine Hinweise}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+
+  \item Regelmäßige Überprüfung der Rechtschreibung und Interpunktion!
+  \item Schreiben Sie stets in vollständigen Sätzen und vermeiden Sie Abkürzungen.  Verwenden Sie eine verständliche Sprache mit klaren, nicht zu langen Sätzen. Es ist üblich, im Deutschen die Wir-Form zu verwenden (z.B.\ \emph{Im Folgenden beweisen wir...}).
+
+  \item Achten Sie bei mathematischen Aussagen auf die sprachliche Reihenfolge etwaiger Quantoren (z.B.\ \emph{Auf jeden Topf passt ein Deckel!} vs.\ \emph{Es gibt einen Deckel, der auf jeden Topf passt!}).
+
+  \item Achten Sie auf eine einheitliche Verwendung von Eigennamen: \emph{Dirichlet-Rand} oder \emph{Dirichletrand}!
+
+  \item Saubere Trennung von mathematischer Aussage und Interpretation einer Aussage. Am besten vor jedem Satz einen kurzen Text über die Bedeutung dieses Ergebnisses.
+  \item Jede "`Section"' beginnt mit einer kurzen Einleitung, was das Ziel und was die Hauptergebnisse dieser "`Section"' sind.
+
+  \item Text sollte nie mit einer Formel beginnen.
+        \begin{itemize}
+          \item Besser: \emph{Es bezeichnet $\mathcal{S}^1(\mathcal{T}) := \big\{ ... \big\}$ den Raum ...}
+          \item Anstelle von: \emph{$\mathcal{S}^1(\mathcal{T}) := \big\{ ... \big\}$ ist der Raum ...}
+        \end{itemize}
+
+  \item In Texten sollte nie Formel auf Formel folgen. Bitte ggf.\ den Text umformulieren!
+        \begin{itemize}
+          \item Besser: \emph{Für eine Triangulierung $\mathcal{T}$ definiere $\mathcal{S}^1(\mathcal{T}) := ...$}
+          \item Anstelle von: \emph{Definiere für eine Triangulierung $\mathcal{T}$ $\mathcal{S}^1(\mathcal{T}) := ...$}
+        \end{itemize}
+
+  \item Lemmata, Sätze, Proposition etc.\ sollten alle gemeinsam gezählt/nummeriert werden (d.h.\ es gibt in dem Dokument \emph{nicht} Lemma~1 und Satz~1). Dadurch lassen sich Resultate im Dokument für den Leser leichter finden. Ggf.\ können Sie das Kapitel in den Zähler einbinden (z.B.\ Satz 3.5).
+        \begin{itemize}
+          \item Am einfachsten ist dazu die Verwendung von \verb$\newtheorem$.
+        \end{itemize}
+
+  \item Nur wichtige Formeln kriegen eine Nummer. Das sind üblicherweise Formeln in Sät\-zen, Lemmata etc.\ sowie Formeln, auf die Sie im Beweis referenzieren.
+
+  \item Vermeiden Sie die Verwendung von Quantoren und Folgt-Pfeilen im Fließtext, d.h.\ mischen Sie nicht logische Aussagen und Text (d.h.\ keine Verwendung von Quantoren zur Abkürzung von Text)! Quantoren und logische Symbole werden üblicherweise nur in abgesetzten Formeln verwendet.
+        \begin{itemize}
+          \item z.B. \emph{Damit haben wir die folgende Aussage gezeigt:
+                  \begin{equation*}
+                    \forall \varepsilon > 0 \, \exists h_0 > 0 \, \forall \mathcal{T}_h\text{ Triangulierung}:
+                    \quad \Big( \| h \|_{L^\infty(\Omega)} \le h_0
+                    \, \Longrightarrow \,
+                    \| u - u_h \|_{H^1(\Omega)} \le \varepsilon \Big).
+                  \end{equation*}}
+        \end{itemize}
+
+  \item Binden Sie Formeln als Teile von Sätzen ein. Achten Sie insbesondere auf die Zeichensetzung nach Formeln!
+        \begin{itemize}
+          \item Bespiel: \emph{Insgesamt erhalten wir damit
+                  \begin{equation}\label{eq:hoelder}
+                    \int_\Omega fg\,dx
+                    \le \bigg(\int_\Omega f^p \, dx\bigg)^{1/p} \bigg(\int_\Omega g^q \, dx\bigg)^{1/q}.
+                  \end{equation}}
+        \end{itemize}
+
+  \item Falls Sie auf eine Formel in einem Beweis an einer Stelle außerhalb des Beweises referenzieren müssen, so sollten Sie diese Formel als eigenes Lemma formulieren.
+
+  \item Falls Ergebnisse/Argumente mehrfach verwendet werden, sollten Sie diese als eigenes Lemma formulieren.
+
+  \item Machen Sie Ihre wesentlichen Ergebnisse (vor allem Sätze, aber auch Lemmata) zitierbar:
+        \begin{itemize}
+          \item alle Voraussetzungen hinschrieben (oder auf Generalvoraussetzung verweisen),
+          \item bei etwaigen Konstanten in Abschätzungen die Abhängigkeit möglichst genau formulieren.
+        \end{itemize}
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Beweise}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+
+  \item Um die Lesbarkeit der Arbeit zu erhöhen, sollten Beweise deduktiv formuliert werden. Dadurch kann der Leser der Argumentation leichter folgen.
+        \begin{itemize}
+          \item Besser: \emph{Weil ..., gilt ...}
+          \item Anstelle von: \emph{Es gilt ..., weil ...}
+        \end{itemize}
+
+  \item Schreiben Sie kurze Sätze mit maximal ein bis zwei Nebensätzen anstelle von langen Satzgefügen.
+        \begin{itemize}
+          \item Besser: \emph{Es gilt ... Daraus folgt ... Mithilfe von ... ergibt sich ...}
+          \item Anstelle von: \emph{Es gilt ..., woraus wir zunächst ... und dann schließlich mithilfe von ... auch ... erhalten.}
+        \end{itemize}
+
+  \item Seien Sie eindeutig, aber nicht ausschweifend in Ihren Texten! Anders als bei einem Deutschaufsatz ist sprachliche Vielfalt nicht das Ziel und Wortwiederholung im Grunde OK! Dies gilt insbesondere dann, wenn ein formales Argument wiederholt wird (d.h.\ gleiche Argumente verwenden dieselben Worte).
+
+  \item Arbeiten Sie die Beweise vollständig aus! Anders als in einem Paper gibt es in der Arbeit keine Begrenzung der Seitenzahl.
+
+  \item Erklären Sie Rechnungen! Eine Rechnung, die über mehrere Zeilen geht, ist in der Regel nicht von alleine verständlich. Für jedes Argument gilt: Sie müssen es entweder zitieren oder beweisen. Standardargumente (z.B.\ Dreiecksungleichung, H\"older-Ungleichung) müssen lediglich genannt, aber nicht zitiert werden.
+
+  \item Gliedern Sie längere Beweise \emph{sichtbar} in mehrere Schritte und sagen Sie explizit, was in jedem Schritt gezeigt wird.
+        \begin{itemize}
+          \item \emph{Schritt~1.} Zunächst zeigen wir...
+          \item Verwenden Sie bitte keine \verb$itemize$-Umgebung für die Beweisschritte!
+        \end{itemize}
+
+  \item Erklären Sie, warum Sie "`o.B.d.A"' schreiben! Warum darf man das ohne Einschrän\-kung annehmen?
+
+  \item Vermeiden Sie die Einschüchterung des Lesers ("`elementare Rechnung zeigt"', "`trivialerweise gilt"' etc.).
+        \begin{itemize}
+          \item Elementare Rechnungen können Sie ggf.\ in einem Appendix sammeln, wenn diese den Lesefluss stören würden (d.h.\ in einem eigenen Abschnitt am Ende der Arbeit, der mit \verb$\appendix$ \emph{vor} den folgenden Gliederungsbefehlen \verb$\chapter{...}$ bzw.\ \verb$\section{...}$ eingeleitet wird).
+        \end{itemize}
+
+  \item Bei Abschätzungen können Sie z.B.\ mittels \verb$\stackrel{\eqref{eq:formel}}{\le}$ beziehungsweise dem vordefinierten Makro \verb$\eqreff{eq:formel}{\le}$ Hinweise geben, dass diese Abschätzung aus der Formel mit \verb$\label{eq:formel}$ folgt, z.B.
+        \begin{equation*}
+          \textup{LHS} \eqreff{eq:hoelder}{\le} \textup{RHS}.
+        \end{equation*}
+        Dies ist für den Leser eine wesentliche Erleichterung, um umfangreiche Abschätzungen nachzuvollziehen.
+
+  \item Bei mehrzeiligen Formeln sollten Sie die Gleichheitszeichen untereinander ausrichten. Dies erreichen Sie mittels der vordefinierten \verb$\eqreff*{eq:formel}{\le}$-Umgebung, z.B.
+        \begin{align*}
+          \textup{LHS} \  & \eqreff*{eq:hoelder}{\le} \ \textup{RHS}_1  \\
+                          & \eqreff*{eq:hoelder}{\le} \ \textup{RHS}_2.
+        \end{align*}
+        Das ist insbesondere bei umfangreichen Abschätzungen sehr hilfreich. Sie müssen dann aber
+        manuell Abstände vor und nach dem Gleichheitszeichen einfügen, z.B.\ \verb$LHS \ \eqreff*{eq:hoelder}{\le} \ RHS_1$.
+
+  \item Ein Beweis sollte nie mit einer Formel enden, sondern mit Text, z.B.\ \emph{womit die Abschätzung {\normalfont(1.3)} gezeigt ist.}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Bilder}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+  \item In den Bild-Unterschriften genau schreiben, was gezeigt wird, insbesondere zu welchem Abschnitt / Beispiel die Abbildung gehört.
+        \begin{itemize}
+          \item am besten auch kurze beschreibende Schlagwörter.
+          \item Beispiel: \emph{Abbildung 3.5. Numerische Resultate zur singulären Lösung auf dem L-Shape aus  Abschnitt~3.1. Wir visualisieren den Fehler $\|u-u_h\|_{H^1(\Omega)}$ über der Anzahl $N$ der Elemente.}
+        \end{itemize}
+
+  \item Unterscheiden Sie bei der Beschreibung von Bildern, was Sie visualisieren, was Sie beobachten und wie Sie dies interpretieren (bzw.\ was dies belegt).
+
+  \item Mathematische Grafiken können Sie leicht mithilfe von \verb$TikZ$ (siehe~\url{https://tikz.dev/tikz}) erstellen. Dafür sind die wichtigsten Einstellungen schon geladen. Eine nützliche Grafik könnte zum Beispiel die bekannte \texttt{SOLVE}--\texttt{ESTIMATE}--\texttt{MARK}--\texttt{REFINE} Schleife in Abbildung~\ref{fig:afem} sein.
+        \begin{figure}
+          \centering
+          \begin{tikzpicture}
+            \tikzset{myline/.style={draw=lightgray, line width=1.5pt, rounded corners}}
+            \tikzset{afemnode/.style={myline, fill=lightgray!50, minimum width={width("ESTIMATE")+2pt}}}
+            \node[afemnode] (solve) at (0,0) {\texttt{SOLVE}};
+            \node[afemnode,right=of solve] (estimate) {\texttt{ESTIMATE}};
+            \node[afemnode,right=of estimate] (mark) {\texttt{MARK}};
+            \node[afemnode,right=of mark] (refine) {\texttt{REFINE}};
+            %
+            \tikzset{connection/.style={myline, gray, -stealth, , opacity=0.5}}
+            \draw[connection] (solve) -- (estimate);
+            \draw[connection] (estimate) -- (mark);
+            \draw[connection] (mark) -- (refine);
+            \draw[connection] (refine.north) -- +(0,15pt) -| ($(solve.north west)!0.33!(solve.north east)$);
+            %
+            \node at ($(estimate.east)!0.5!(mark.west)+(30pt,17pt)$) {\scriptsize solution accurate enough?};
+          \end{tikzpicture}
+          \caption{Die \texttt{SOLVE}--\texttt{ESTIMATE}--\texttt{MARK}--\texttt{REFINE} Schleife.\label{fig:afem}}
+        \end{figure}
+
+  \item In der Praxis ist es auch gut, wenn Sie die Grafiken in Subfiles auslagern und diese dann in das Hauptdokument einbinden. Das erhöht die Übersichtlichkeit und erleichtert das Arbeiten an den einzelnen Kapiteln. Ein Beispiel dafür ist in Abbildung~\ref{fig:patch} gezeigt.
+        \begin{figure}
+          \centering
+          \begin{tikzpicture}
+            \input{figures/patch.tex}
+          \end{tikzpicture}
+          \caption{Ein Patch $\omega_{L,z}$ mit zugehörigen Freiheitsgraden.}
+          \label{fig:patch}
+        \end{figure}
+
+  \item Ein weiteres nützliches Tool für die Erzeugung von Grafiken ist pgfplots. Ein Manual dazu gibt es unter~\url{https://mirror.kumi.systems/ctan/graphics/pgf/contrib/pgfplots/doc/pgfplots.pdf}. Nützliche Einstellungen sind bereits im Klassenfile enthalten. Ein Beispiel für die Verwendung von pgfplots ist in Abbildung~\ref{fig:konvergenzplot} gezeigt.
+
+        \begin{figure}
+          \centering
+          \input{plots/konvergenzplot.tex}
+          \caption{Numerische Resultate zur singulären Lösung auf dem
+            L-Shape aus Abschnitt 3.1. Wir visualisieren den Fehlerschätzer $\eta_\ell$ über der
+            Anzahl \texttt{ndof} der Freiheitsgrade.
+          }
+          \label{fig:konvergenzplot}
+        \end{figure}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Zitieren + Literaturverzeichnis}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+  \item Um Ergebnisse aus Arbeiten zu zitieren, sollten Sie \verb$\cite[Theorem~X]{workY}$ nutzen und auch das konkrete Resultat angeben.
+        \begin{itemize}
+          \item z.B.\ \cite[Theorem~4]{MR3457440}
+        \end{itemize}
+
+  \item Wenn Sie ein Buch zitieren, geben Sie bitte mittels \verb$\cite[Section~X]{buchY}$
+        den Abschnitt an. Häufig ist es besser, Abschnitte zu zitieren als Seitennummern.
+
+  \item Verwenden Sie \verb$BibTeX$ (siehe \verb$literature.bib$ in diesem Template)!
+        \begin{itemize}
+          \item Alternativ können Sie auch die \verb$thebibliography$-Umgebung verwenden. Achten Sie in diesem Fall darauf, dass Sie die vollständigen bibliographischen Daten angeben (Artikel: Autoren, Titel, Zeitschrift, Band, Jahr, Seiten; Buch: Autoren, Titel, Verlag, Verlagsort, Auflage, Jahr), alle Einträge \emph{einheitlich} formatieren und alphabetisch sortieren.
+        \end{itemize}
+
+  \item Die \verb$BibTeX$-Einträge können Sie aus \verb$http://www.ams.org/mathscinet/$ mittels Copy'n'Paste überneh\-men.
+  \item Auch wenn Sie die \verb$BibTeX$-Einträge aus \verb$http://www.ams.org/mathscinet/$ über\-neh\-men, sollten Sie darauf achten, dass am Ende die Einträge \emph{einheitlich} sind:
+        \begin{itemize}
+          \item Bei Vornamen von Autoren entweder alle abkürzen oder alle ausschreiben.
+          \item Bei Journal-Namen entweder bei allen den vollständigen Namen angeben oder
+                bei allen die offizielle Abkürzung gemäß \verb$http://www.ams.org/mathscinet/$ verwenden.
+        \end{itemize}
+
+  \item siehe auch die Vorlesungsfolien auf \verb$http://www.asc.tuwien.ac.at/compmath/.$
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\LaTeX}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+
+  \item Alle \verb$Overfull \hbox$ und \verb$Overfull \vbox$ eliminieren!
+        \begin{itemize}
+          \item \verb$Overfull \hbox$ eliminiert man durch geeignete \verb$Sil\-ben\-tren\-nung$ oder geeignete \verb$\linebreak$.
+          \item \verb$Overfull \vbox$ eliminiert man durch geeignete \verb$\pagebreak$.
+        \end{itemize}
+
+  \item Absätze macht man in \LaTeX, indem man Leerzeilen verwendet. Üblicherweise wird dadurch auch das erste Wort des neuen Absatzes eingerückt, was die Lesbarkeit erhöht. Bitte also \emph{nicht} \verb$\\$ oder \verb$\newline$ für einen neuen Absatz verwenden!
+  \item Grundsätzlich machen Leerzeilen vor/nach Umgebungen (z.B.\ \verb$\begin{theorem}$ etc.) den Source-Code lesbarer.
+  \item Das Tilde-Symbol verhindert einen Zeilenumbruch und wird deshalb vor \verb$\ref$, \verb$\cite$ etc.\ verwendet, z.B.\ \verb$Laut Satz~\ref{satz:xxx} gilt$...
+
+  \item In Subscripts oder Superscripts verwendet man kein \verb$\frac$, sondern schreibt den Bruch aus:
+        \begin{itemize}
+          \item Also besser $\displaystyle \bigg(\sum_{T \in \mathcal T} \eta_T^2\bigg)^{1/2}$ anstelle von
+                $\displaystyle \bigg(\sum_{T \in \mathcal T} \eta_T^2\bigg)^{\frac{1}{2}}$.
+          \item Also besser $m_h^{i+1/2}$ anstelle von $m_h^{i+\frac{1}{2}}$.
+        \end{itemize}
+
+  \item Verwenden Sie im Fließtext möglichst kein \verb$frac$!
+        \begin{itemize}
+          \item Besser: $(n+1)^{-1}$ oder $1/(n+1)$.
+          \item Anstelle von: $\frac{1}{n+1}$.
+        \end{itemize}
+
+  \item Falls Sie ggf.\ Abkürzungen verwenden, sollten Sie in \LaTeX\ \verb$ggf.\$ schreiben, damit der Punkt nicht als Satzende (= größerer Abstand) interpretiert wird.
+
+  \item Mittels Verwendung von \verb$\input{kapitelX.tex}$ können Sie Ihr Dokument auf mehrere Dateien aufteilen (z.B.\ kapitelweise).
+
+  \item Damit in Formeln Konstanten und Klammern nicht aneinander picken, sollten Sie mittels \verb$\,$ händisch Abstände einfügen, z.B. \verb$C \, h^\alpha$. Dasselbe gilt in Integranden, z.B. \verb$\int_\Omega f^2 \, dx$. \LaTeX\ ist an diesen Stellen sehr "`knausrig"' mit Abständen.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Englisch vs.\ Deutsch}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+
+  \item Sie dürfen Ihre Arbeit sowohl auf Englisch als auch auf Deutsch verfassen!
+
+  \item Bitte schreiben Sie nur auf Englisch, wenn Sie wissen, was Sie tun! Der Korrekturaufwand kann für beide Seiten immens sein! Insbesondere gelten für die Zeichensetzung im Englischen andere Regeln als im Deutschen.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Iterationen}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+
+  \item Üblicherweise erfolgt das Lesen und die Korrektur der Arbeit iterativ.
+  \item Bitte verwenden Sie das Makro \verb$\revision{...}$, um Änderungen \revision{farbig hervorzuheben}. Dieses Makro kann bei der nächsten Iteration mit dem C-Code \verb$cleantex.c$ aus dem \LaTeX-Dokument entfernt werden.
+
+\end{itemize}
+
+% Falls die Datei eigenständig kompiliert wird, wird hier das Literaturverzeichnis ausgegeben.
+\ifSubfilesClassLoaded{
+  \printbibliography
+}{}
+
+\end{document}

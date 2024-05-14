@@ -1,0 +1,43 @@
+% Fügen Sie hier Ihre Daten ein, die Sie zum Beispiel aus Matlab oder Python 
+% als csv Datei exportiert haben
+\pgfplotstableread[col sep = comma]{
+    nDofs,  estimator
+    41,     2.31414e-02
+    73,     1.47569e-02
+    137,     8.54214e-03
+    278,     4.39263e-03
+    558,     2.30667e-03
+    1115,     1.16646e-03
+    2244,     5.89691e-04
+    4622,     2.90811e-04
+    9174,     1.48216e-04
+    19063,     7.18022e-05
+}{\ErsterDatensatz}%
+
+\begin{tikzpicture}[scale=1]
+    \begin{loglogaxis}[
+            xlabel = {Anzahl der Freiheitsgrade},%
+            ylabel={Fehler},%
+            line join = round,%
+            line cap=round,%
+            ymajorgrids      = true%
+        ]
+
+        \coordinate (legend) at (axis description cs:0.35,0.25);
+
+        \addplot [pyBlue,thick, mark=*, mark options={solid, fill=pyBlue!50!white, scale = 1.1}, solid] table [x={nDofs}, y={estimator}]{\ErsterDatensatz}; \label{figure:ErsterDatensatz}
+
+        % Referenzgerade
+        \logLogSlope[reference]{0.1}{0.9}{0.7}{-1}{-5pt}{}
+    \end{loglogaxis}
+
+    % Erstelle Legende als Matrix an der Stelle (legend)
+    \matrix [
+        matrix of nodes,
+        anchor=center,
+        font=\scriptsize
+    ] at (legend) {
+        Fehlerschätzer & \\
+        \ref{figure:ErsterDatensatz} & $p = 1$\\
+    };
+\end{tikzpicture}
