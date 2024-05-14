@@ -32,7 +32,7 @@ jobs:
       - name: Rename template file to main.tex
         run: mv template_${{ matrix.type }}.tex main.tex
       - name: Zip LaTeX project
-        run: zip -r template_${{ matrix.type }}.zip * -x .git .github .gitignore docs template_*.tex
+        run: zip -r template_${{ matrix.type }}.zip * -x docs\* template_*.tex
       - name: Upload LaTeX project as artifact
         uses: actions/upload-artifact@v4
         with:
