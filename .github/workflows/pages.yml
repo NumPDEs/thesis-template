@@ -31,17 +31,13 @@ jobs:
         uses: actions/checkout@v4
       - name: Rename template file to main.tex
         run: mv template_${{ matrix.type }}.tex main.tex
+      - name: Zip LaTeX project
+        run: zip -r template_${{ matrix.type }}.zip * -x .git .github .gitignore docs template_*.tex
       - name: Upload LaTeX project as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: template_${{ matrix.type }}
-          path: |
-            *
-            !.git
-            !.github
-            !.gitignore
-            !docs
-            !template_*.tex
+          name: template_${{ matrix.type }}_zip
+          path: template_${{ matrix.type }}.zip
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
@@ -65,11 +61,17 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Download artifact
+      - name: Download PDFs
         uses: actions/download-artifact@v4
         with:
           pattern: template_*_pdf
-          path: docs
+          path: docs/pdfs
+          merge-multiple: true
+      - name: Download LaTeX projects
+        uses: actions/download-artifact@v4
+        with:
+          pattern: template_*_zip
+          path: docs/dl
           merge-multiple: true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
