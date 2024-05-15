@@ -1,4 +1,4 @@
-\documentclass[../main.tex]{subfiles}
+\documentclass[../template_diplom.tex]{subfiles}
 \begin{document}
 
 % Der Befehl \ifSubfilesClassLoaded kann dafür genutzt werden, um gewisse Befehle nur dann auszuführen, 
@@ -198,6 +198,22 @@
           }
           \label{fig:konvergenzplot}
         \end{figure}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Tabellen}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+  \item Bei Tabellen sollten Sie weder vertikale Linien noch doppelte horizontale Linien verwenden.
+  \item Einen guten Überblick erhalten Sie in der Paketdokumentation von \verb$booktabs$ unter~\url{https://www.namsu.de/Extra/pakete/Booktabs.html}.
+  \item Tabellen sollten eine klare Struktur haben und die Einträge sollten übersichtlich sein. Ein Beispiel für eine Tabelle ist in Tabelle~\ref{table:convergence} gezeigt.
+  
+  \begin{table}
+    \centering
+    \input{../tables/table.tex}
+    \caption{Experimentelle Konvergenzraten des Fehlerschätzers aus Abschnitt~3.1.}
+    \label{table:convergence}
+  \end{table}
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

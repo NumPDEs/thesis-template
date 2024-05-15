@@ -41,11 +41,12 @@
 \RequirePackage[dvipsnames]{xcolor}
 \RequirePackage{hyperref}
 \RequirePackage{microtype}
-\RequirePackage{booktabs}
 \RequirePackage{tikz}
 \RequirePackage{pgfplots}
 \RequirePackage{pgfplotstable}
 \RequirePackage{colortbl}
+\RequirePackage{tabularray}
+\UseTblrLibrary{booktabs}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
