@@ -1,0 +1,4 @@
+site_name: Thesis Template
+site_url: https://numpdes.github.io/thesis-template/
+theme:
+  name: material
