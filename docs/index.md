@@ -1,8 +1,5 @@
 # LaTeX Thesis Template
 
-Diese Seite enthält Vorlagen für
+## Vorlagen
 
-- Seminararbeiten,
-- Bachelorarbeiten,
-- Masterarbeiten,
-- und Dissertationen.
+- Masterarbeit: [Vorschau (PDF)](pdfs/template_diplom.pdf), [Download (ZIP)](dl/template_diplom.zip)
