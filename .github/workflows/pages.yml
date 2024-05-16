@@ -8,11 +8,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Sets permissions of the GITHUB_TOKEN to allow for pushing to the repository
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -29,6 +27,8 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
+
+      # Create ZIP archive of LaTeX project and upload as artifact
       - name: Rename template file to main.tex
         run: mv template_${{ matrix.type }}.tex main.tex
       - name: Zip LaTeX project
@@ -38,6 +38,8 @@ jobs:
         with:
           name: template_${{ matrix.type }}_zip
           path: template_${{ matrix.type }}.zip
+
+      # Compile LaTeX document and upload as artifact
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
@@ -50,12 +52,15 @@ jobs:
         with:
           name: template_${{ matrix.type }}_pdf
           path: template_${{ matrix.type }}.pdf
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      # Download artifacts
       - name: Download PDFs
         uses: actions/download-artifact@v4
         with:
@@ -68,6 +73,8 @@ jobs:
           pattern: template_*_zip
           path: docs/dl
           merge-multiple: true
+
+      # Deploy documentation to GitHub Pages according to the mkdocs documentation
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions[bot]
