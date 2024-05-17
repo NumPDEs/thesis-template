@@ -22,7 +22,7 @@ jobs:
   build:
     strategy:
       matrix:
-        type: [diplom]
+        type: [seminar, bachelor, diplom, diss]
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
