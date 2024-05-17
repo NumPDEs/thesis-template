@@ -3,3 +3,6 @@ site_url: https://numpdes.github.io/thesis-template/
 repo_url: https://github.com/NumPDEs/thesis-template
 theme:
   name: material
+  palette:
+    primary: blue
+    accent: light-blue
