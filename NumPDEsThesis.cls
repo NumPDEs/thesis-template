@@ -187,15 +187,27 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Mathematische Umgebungen
-% Im Falle, dass die Arbeit auf Englisch geschrieben wird, müssen die Befehle angepasst werden.
 
 \theoremstyle{plain}
-\newtheorem{theorem}{Satz}[chapter]
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}[theorem]{Korollar}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{remark}[theorem]{Bemerkung}
+\newtheorem{satz}{Satz}[chapter]
+\newtheorem{lemma}[satz]{Lemma}
+\newtheorem{korollar}[satz]{Korollar}
+\newtheorem{proposition}[satz]{Proposition}
+\newtheorem{definition}[satz]{Definition}
+\newtheorem{bemerkung}[satz]{Bemerkung}
 
 \theoremstyle{definition}
-\newtheorem{example}[theorem]{Beispiel}
+\newtheorem{beispiel}[satz]{Beispiel}
+
+% Englische Version
+
+% \theoremstyle{plain}
+% \newtheorem{theorem}{Theorem}[chapter]
+% \newtheorem{lemma}[theorem]{Lemma}
+% \newtheorem{corollary}[theorem]{Corollary}
+% \newtheorem{proposition}[theorem]{Proposition}
+% \newtheorem{definition}[theorem]{Definition}
+% \newtheorem{remark}[theorem]{Remark}
+
+% \theoremstyle{definition}
+% \newtheorem{example}[theorem]{example}
