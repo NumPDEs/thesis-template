@@ -183,3 +183,19 @@
 
 \newtheorem{algorithm}{Algorithm}
 \renewcommand*{\thealgorithm}{\Alph{algorithm}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mathematische Umgebungen
+% Im Falle, dass die Arbeit auf Englisch geschrieben wird, müssen die Befehle angepasst werden.
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Satz}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Korollar}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Bemerkung}
+
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Beispiel}
