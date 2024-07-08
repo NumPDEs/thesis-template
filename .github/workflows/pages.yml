@@ -1,4 +1,4 @@
-name: Deploy documentation to Pages
+name: Compile and package LaTeX project and deploy to GitHub Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -34,7 +34,7 @@ jobs:
       - name: Remove all left over .type.tex files
         run: find . -name "*.*.tex" -delete
       - name: Zip LaTeX project
-        run: zip -r template_${{ matrix.type }}.zip * -x docs\* mkdocs.yml
+        run: zip -r template_${{ matrix.type }}.zip *
       - name: Upload LaTeX project as artifact
         uses: actions/upload-artifact@v4
         with:
@@ -60,35 +60,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Create upload directory
+        run: mkdir -p upload
 
       # Download artifacts
       - name: Download PDFs
         uses: actions/download-artifact@v4
         with:
           pattern: template_*_pdf
-          path: docs/pdfs
+          path: upload/pdfs
           merge-multiple: true
       - name: Download LaTeX projects
         uses: actions/download-artifact@v4
         with:
           pattern: template_*_zip
-          path: docs/dl
+          path: upload/dl
           merge-multiple: true
 
-      # Deploy documentation to GitHub Pages according to the mkdocs documentation
-      - name: Configure Git Credentials
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - uses: actions/setup-python@v5
+      # Push to gh-pages branch
+      - name: Push contents of upload directory to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-      - uses: actions/cache@v4
-        with:
-          key: mkdocs-material-${{ env.cache_id }}
-          path: .cache
-          restore-keys: |
-            mkdocs-material-
-      - run: pip install mkdocs-material 
-      - run: mkdocs gh-deploy --force
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./upload
