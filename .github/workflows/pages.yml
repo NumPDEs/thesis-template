@@ -34,7 +34,7 @@ jobs:
       - name: Remove all left over .type.tex files
         run: find . -name "*.*.tex" -delete
       - name: Zip LaTeX project
-        run: zip -r template_${{ matrix.type }}.zip *
+        run: zip -r template_${{ matrix.type }}.zip * +x README.md
       - name: Upload LaTeX project as artifact
         uses: actions/upload-artifact@v4
         with:
@@ -61,10 +61,6 @@ jobs:
       # Setup
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Configure Git Credentials
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
       - name: Create upload directory
         run: mkdir -p upload
 
@@ -88,3 +84,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./upload
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
