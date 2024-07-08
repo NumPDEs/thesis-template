@@ -29,10 +29,12 @@ jobs:
         uses: actions/checkout@v4
 
       # Create ZIP archive of LaTeX project and upload as artifact
-      - name: Rename template file to main.tex
-        run: mv template_${{ matrix.type }}.tex main.tex
+      - name: Rename all .type.tex files to .tex
+        run: find . -name "*.${{ matrix.type }}.tex" -exec sh -c 'x="{}"; mv -- "$x" "${x%.${{ matrix.type }}.tex}.tex"' \;
+      - name: Remove all left over .type.tex files
+        run: find . -name "*.*.tex" -delete
       - name: Zip LaTeX project
-        run: zip -r template_${{ matrix.type }}.zip * -x docs\* template_*.tex mkdocs.yml
+        run: zip -r template_${{ matrix.type }}.zip * -x docs\* mkdocs.yml
       - name: Upload LaTeX project as artifact
         uses: actions/upload-artifact@v4
         with:
@@ -43,8 +45,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: |
-            main.tex
+          root_file: main.tex
       - name: Rename PDF file
         run: mv main.pdf template_${{ matrix.type }}.pdf
       - name: Upload PDF as artifact
