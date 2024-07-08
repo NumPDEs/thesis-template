@@ -62,7 +62,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Laden nützlicher TikZ-Bibliotheken
-\usetikzlibrary{arrows, positioning, shapes, matrix, calc, fit, backgrounds}
+\usetikzlibrary{arrows, positioning, shapes, matrix, calc, fit, backgrounds, babel}
 \tikzset{reference/.style={thick,dashed}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
