@@ -20,48 +20,6 @@
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% TITELSEITE [OBLIGATORISCH]
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\pagenumbering{Alph}
-
-\begin{titlepage}
-  %\vspace*{-2cm}
-  \begin{center}
-    \includegraphics[width=0.45\textwidth]{figures/TULogo.pdf}
-    \vskip 1cm%
-    {\LARGE S~\Large E~M~I~N~A~R~A~R~B~E~I~T}
-    \vskip 8mm
-    {\huge\bfseries\color{change}Titel \\[1ex] ggf.\ mehrzeilig}
-    \vskip 1cm
-    \large 
-    ausgef\"uhrt am    
-    \vskip 0.75cm
-    {\Large Institut f\"ur\\[1ex] Analysis und Scientific Computing}\\[1ex]
-    {\Large TU Wien}
-    \vskip0.75cm
-    unter der Anleitung von
-    \vskip0.75cm
-    {\Large\bfseries\color{change}Name des Betreuers}\\[1ex]
-    \vskip 0.5cm
-    durch
-    \vskip 0.5cm
-    {\Large\bfseries\color{change}Name des Autors}\\[1ex]
-    Matrikelnummer: {\color{change}12345678}\\[1ex]
-    {\color{change}Straße und Hausnummer}\\[1ex]
-    {\color{change}PLZ und Ort}
-  \end{center}
-  
-  \vfill
-  
-  \small
-  Wien, am {\color{change} Datum} %\today
-  \vspace*{-15mm}
-\end{titlepage}
-
-\cleardoublepage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % INHALTSVERZEICHNIS [OBLIGATORISCH]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -81,42 +39,10 @@
 % \include fügt immer einen Seitenumbruch ein
 % Mit \includeonly{filename1,filename2,...} können nur bestimmte files kompiliert werden (siehe oben)
 % Eine fortgeschrittenere Alternative zu \include ist das Paket "subfiles"
+\include{chapters/frontmatter}
 \include{chapters/01_einleitung}
 \include{chapters/02_manual}
-
-\chapter{Sinn einer Seminararbeit}
-\label{chapter:sinnfrage}
-
-\begin{itemize}
-
-\item Laut Studienplan\footnote{\href{http://www.tuwien.ac.at/?id=vt033201}{\ttfamily http://www.tuwien.ac.at/?id=vt033201}}
-gilt:
-\begin{quote}\itshape
-Im Rahmen eines Seminars ist eine Seminararbeit zu verfassen. Die Seminararbeit dient als Vorbereitung für die Bachelorarbeit und soll ebenfalls eine intensive Beschäftigung mit einem Problem der reinen oder angewandten Mathematik nachweisen, wenn auch in geringerem Ausmaß [als die Bachelorarbeit].
-\end{quote}
-
-\item Es gibt keine Mindest- oder Maximallänge für eine Seminararbeit. In der Regel wird sie 10--15 Seiten umfassen.
-
-\item Im Rahmen der Seminararbeit arbeiten Sie den Vortrag, den Sie im Seminar gehalten haben, schriftlich aus. 
-Sie sollen die während des Studiums erworbene Fähigkeiten anwenden und insbesondere Beweise schriftlich und formal korrekt formulieren. 
-
-\item Es ist {\em nicht} Sinn der Arbeit, englische Texte ins Deutsche zu übersetzen oder ganze
-Beweise wortwörtlich oder fast wortwörtlich aus anderen Arbeiten zu übernehmen. {\em Dies wäre ein Plagiat!} 
-
-\item Formulieren Sie die Themenstellung, die Lösungsansätze und die Beweise 
-mit Ihren eigenen Worten. In den meisten Fällen sind die Beweise
-in wissenschaftlichen Arbeiten/Büchern sehr knapp formuliert. Formulieren Sie diese so
-aus, dass Ihre Kolleginnen und Kollegen den Beweis auch verstehen, ohne lange selbst nachdenken
-oder rechnen zu müssen. Wenn Sie selbst über ein Argument lange nachdenken mussten,
-geben Sie Details an.
-
-\item Lassen Sie Ihre Arbeit von einer Kollegin/einem Kollegen Korrektur lesen.
-Diese Person kann logische Fehler oder Widersprüche finden, die Sie nicht mehr
-erkennen, weil Sie Ihren Text schon zu häufig gelesen haben.
-
-\item Planen Sie ausreichend Zeit für Ihre Arbeit ein. Laut Studienplan
-werden 3 ECTS-Punkte, also 90 Stunden eingeplant. Dies entspricht mehr
-als 2 vollständigen Wochen bei einer 40-Stunden-Woche. 
+\include{chapters/03_sinn}
 
 \end{itemize}
 
