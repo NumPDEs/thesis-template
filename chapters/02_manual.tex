@@ -1,13 +1,3 @@
-\documentclass[../main.tex]{subfiles}
-\begin{document}
-
-% Der Befehl \ifSubfilesClassLoaded kann dafür genutzt werden, um gewisse Befehle nur dann auszuführen, 
-% wenn die Datei als Subfile geladen wird. Hier zum Beispiel, wird die Kapitelnummer auf 2 gesetzt, 
-% wenn die Datei eigenständig kompiliert wird.
-\ifSubfilesClassLoaded{
-  \setcounter{chapter}{1}
-}{}
-
 \chapter{Los geht's}
 \label{chapter:content}
 
@@ -177,7 +167,7 @@
           \caption{Die \texttt{SOLVE}--\texttt{ESTIMATE}--\texttt{MARK}--\texttt{REFINE} Schleife.\label{fig:afem}}
         \end{figure}
 
-  \item In der Praxis ist es auch gut, wenn Sie die Grafiken in Subfiles auslagern und diese dann in das Hauptdokument einbinden. Das erhöht die Übersichtlichkeit und erleichtert das Arbeiten an den einzelnen Kapiteln. Ein Beispiel dafür ist in Abbildung~\ref{fig:patch} gezeigt.
+  \item In der Praxis ist es auch gut, wenn Sie die Grafiken in separate Dateien auslagern und diese dann in das Hauptdokument einbinden. Das erhöht die Übersichtlichkeit und erleichtert das Arbeiten an den einzelnen Kapiteln. Ein Beispiel dafür ist in Abbildung~\ref{fig:patch} gezeigt.
         \begin{figure}
           \centering
           \begin{tikzpicture}
@@ -305,10 +295,3 @@
   Dieses Makro kann bei der nächsten Iteration mithilfe von \url{https://aldadic.github.io/cleantex/} entfernt werden.
 
 \end{itemize}
-
-% Falls die Datei eigenständig kompiliert wird, wird hier das Literaturverzeichnis ausgegeben.
-\ifSubfilesClassLoaded{
-  \printbibliography
-}{}
-
-\end{document}

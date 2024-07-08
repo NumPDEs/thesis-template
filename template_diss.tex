@@ -10,11 +10,12 @@
 % Lade weitere Pakete
 \usepackage{NumPDEsMacros} % in NumPDEsMacros.sty sind einige nützliche Befehle definiert
 
-% Subfile-Paket für modulare Struktur
-\usepackage{subfiles}
-
 % Bevor die Arbeit gedruckt wird, sollten die Farben ausgeschaltet werden, indem die folgende Zeile auskommentiert wird.
 % \hypersetup{colorlinks=false,citecolor=black,linkcolor=black,urlcolor=black,pagebackref=false}
+
+% Zum schnellen Kompilieren während des Schreibens kann mit \includeonly{filename1,filename2,...} die Kompilierung auf bestimmte Kapitel beschränkt werden
+% Damit die Referenzen aus den anderen Kapiteln korrekt sind, muss einmal mit allen Kapiteln kompiliert werden
+% \includeonly{chapters/02_manual}  % nur Kapitel 2 wird kompiliert
 
 \begin{document}
 
@@ -199,11 +200,13 @@ Wien, am {\color{change}Datum} %\today
 % KAPITEL DER ARBEIT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Verwende subfiles für modulare Struktur der Arbeit
-% Es bietet sich an, jedes Kapitel in einem eigenen File zu schreiben und mit \subfile{filename} einzubinden
-% Die subfiles können auch einzeln kompiliert werden, indem sie als Hauptdatei gesetzt werden
-\subfile{chapters/einleitung}
-\subfile{chapters/manual}
+% Verwende \include für modulare Struktur der Arbeit
+% Es bietet sich an, jedes Kapitel in einem eigenen File zu schreiben und mit \include{filename} einzubinden
+% \include fügt immer einen Seitenumbruch ein
+% Mit \includeonly{filename1,filename2,...} können nur bestimmte files kompiliert werden (siehe oben)
+% Eine fortgeschrittenere Alternative zu \include ist das Paket "subfiles"
+\include{chapters/01_einleitung}
+\include{chapters/02_manual}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % LITERATURVERZEICHNIS MIT BIBLATEX --> MATHSCINET VERWENDEN
