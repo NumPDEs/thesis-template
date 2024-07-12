@@ -35,7 +35,7 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{csquotes}
-\RequirePackage{amsthm,amsmath,amssymb,amsfonts}
+\RequirePackage{amsmath,amsthm,amssymb,amsfonts}
 \RequirePackage{enumitem}
 \RequirePackage{graphicx}
 \RequirePackage[dvipsnames]{xcolor}
