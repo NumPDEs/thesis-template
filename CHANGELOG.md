@@ -16,3 +16,4 @@ Alle nennenswerten Änderungen an diesen Templates werden in dieser Datei dokume
 * Beispiel für Algorithmus-Umgebung hinzugefügt
 * Daten für PGFPlot werden aus einer CSV-Datei geladen
 * Beispiel für Definition von Axiomen hinzugefügt
+* Beispiel für Unterabbildungen hinzugefügt.

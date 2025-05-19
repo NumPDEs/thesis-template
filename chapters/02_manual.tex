@@ -169,7 +169,7 @@
   \item Unterscheiden Sie bei der Beschreibung von Bildern, was Sie visualisieren, was Sie beobachten und wie Sie dies interpretieren (bzw.\ was dies belegt).
 
   \item Mathematische Grafiken können Sie leicht mithilfe von \verb$TikZ$ (siehe~\url{https://tikz.dev/tikz}) erstellen. Dafür sind die wichtigsten Einstellungen schon geladen. Eine nützliche Grafik könnte zum Beispiel die bekannte \texttt{SOLVE}--\texttt{ESTIMATE}--\texttt{MARK}--\texttt{REFINE} Schleife in Abbildung~\ref{fig:afem} sein.
-        \begin{figure}
+        \begin{figure}[ht!]
           \centering
           \begin{tikzpicture}
             \tikzset{myline/.style={draw=lightgray, line width=1.5pt, rounded corners}}
@@ -191,7 +191,7 @@
         \end{figure}
 
   \item In der Praxis ist es auch gut, wenn Sie die Grafiken in separate Dateien auslagern und diese dann in das Hauptdokument einbinden. Das erhöht die Übersichtlichkeit und erleichtert das Arbeiten an den einzelnen Kapiteln. Ein Beispiel dafür ist in Abbildung~\ref{fig:patch} gezeigt.
-        \begin{figure}
+        \begin{figure}[ht!]
           \centering
           \begin{tikzpicture}
             \input{figures/patch.tex}
@@ -200,9 +200,18 @@
           \label{fig:patch}
         \end{figure}
 
+  \item Verwenden Sie das package \verb$subcaption$, um mehrere Abbildungen in einer Abbildung zu kombinieren. 
+  Ein Beispiel dafür ist in Abbildung~\ref{fig:subfig-example} gezeigt.
+\begin{figure}[ht!]
+  \centering
+  \input{figures/subfigures.tex}
+  \caption{Dies ist eine Beispielabbildung mit vier Unterabbildungen.}
+  \label{fig:subfig-example}
+\end{figure}
+
   \item Ein weiteres nützliches Tool für die Erzeugung von Grafiken ist pgfplots. Ein Manual dazu gibt es unter~\url{https://mirror.kumi.systems/ctan/graphics/pgf/contrib/pgfplots/doc/pgfplots.pdf}. Nützliche Einstellungen sind bereits im Klassenfile enthalten. Ein Beispiel für die Verwendung von pgfplots ist in Abbildung~\ref{fig:konvergenzplot} gezeigt.
 
-        \begin{figure}
+        \begin{figure}[ht!]
           \centering
           \input{plots/konvergenzplot.tex}
           \caption{Numerische Resultate zur singulären Lösung auf dem
@@ -220,7 +229,10 @@
 \begin{itemize}
   \item Es gibt eine Vielzahl an Packages, die Umgebungen für Algorithmen bereitstellen.
   Wir stellen hier nur ein simples Beispiel einer Algorithmus-Umgebung vor, die im Klassenfile mittels \verb$newtheorem$ definiert ist.
+  Siehe dazu Algorithm~\ref{alg:2d-nvb}.
 \end{itemize}
+
+\pagebreak
 
 \begin{algorithm}[2D newest vertex bisection]\label{alg:2d-nvb}
   \textbf{Input:} Triangulation $\mathcal{T}_\ell$ and set of marked elements $\mathcal{M}_\ell \subseteq \mathcal{T}_\ell$.
