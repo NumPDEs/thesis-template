@@ -10,3 +10,4 @@ Alle nennenswerten Änderungen an diesen Templates werden in dieser Datei dokume
 * Eidesstattliche Erklärung in Bezug auf AI-Nutzung angepasst
 * `revision`-Befehl angepasst (macht Strich am Rand wenn `\revision` verwendet wird)
 * Hypersetup-Befehl für Druckversion geändert
+* Metadaten für PDF-Dokument hinzugefügt
