@@ -34,7 +34,7 @@ jobs:
       - name: Remove all left over .type.tex files
         run: find . -name "*.*.tex" -delete
       - name: Zip LaTeX project
-        run: zip -r template_${{ matrix.type }}.zip * -x README.md
+        run: zip -r template_${{ matrix.type }}.zip * -x "*.md"
       - name: Upload LaTeX project as artifact
         uses: actions/upload-artifact@v4
         with:
