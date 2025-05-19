@@ -9,3 +9,4 @@ Alle nennenswerten Änderungen an diesen Templates werden in dieser Datei dokume
 * Unterschriften-Felder bei Diplomarbeits-Template hinzugefügt
 * Eidesstattliche Erklärung in Bezug auf AI-Nutzung angepasst
 * `revision`-Befehl angepasst (macht Strich am Rand wenn `\revision` verwendet wird)
+* Hypersetup-Befehl für Druckversion geändert
