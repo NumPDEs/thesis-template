@@ -196,6 +196,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Umgebung für Algorithmen
 
+\newtheoremstyle{break}{}{}{\itshape}{}{\bfseries}{.}{\newline}{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+\theoremstyle{break}
 \newtheorem{algorithm}{Algorithm}
 \renewcommand*{\thealgorithm}{\Alph{algorithm}}
 

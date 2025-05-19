@@ -138,6 +138,8 @@
         Das ist insbesondere bei umfangreichen Abschätzungen sehr hilfreich. Sie müssen dann aber
         manuell Abstände vor und nach dem Gleichheitszeichen einfügen, z.B.\ \verb$LHS \ \eqreff*{eq:hoelder}{\le} \ RHS_1$.
 
+  
+
   \item Ein Beweis sollte nie mit einer Formel enden, sondern mit Text, z.B.\ \emph{womit die Abschätzung {\normalfont(1.3)} gezeigt ist.}
 \end{itemize}
 
@@ -198,6 +200,32 @@
           \label{fig:konvergenzplot}
         \end{figure}
 \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Algorithmen}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+  \item Es gibt eine Vielzahl an Packages, die Umgebungen für Algorithmen bereitstellen.
+  Wir stellen hier nur ein simples Beispiel einer Algorithmus-Umgebung vor, die im Klassenfile mittels \verb$newtheorem$ definiert ist.
+\end{itemize}
+
+\begin{algorithm}[2D newest vertex bisection]\label{alg:2d-nvb}
+  \textbf{Input:} Triangulation $\mathcal{T}_\ell$ and set of marked elements $\mathcal{M}_\ell \subseteq \mathcal{T}_\ell$.
+  \begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
+    \item For all $T \in \mathcal{M}_\ell$, mark its refinement edge.
+    \item \textbf{Repeat recursively}\label{alg-step:nvb-closure}
+      \begin{itemize}[label={},leftmargin=*,labelindent=1ex,topsep=-1ex,itemsep=-1ex,partopsep=1ex,parsep=1ex]
+        \item If a triangle $T \in \mathcal{T}_\ell$ has a marked edge that is not the refinement edge, also mark the refinement edge of $T$.
+      \end{itemize}
+      \textbf{until}
+      \begin{itemize}[label={},leftmargin=*,labelindent=1ex,topsep=-1ex,itemsep=-1ex,partopsep=1ex,parsep=1ex]
+        \item No triangle $T \in \mathcal{T}_\ell$ with marked edges has an unmarked refinement edge.
+      \end{itemize}
+    \item For all $T \in \mathcal{T}_\ell$, refine according to the pattern from Figure ?.
+  \end{enumerate}
+  \textbf{Output:} Refined triangulation $\mathcal{T}_{\ell+1}$.
+\end{algorithm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tabellen}
