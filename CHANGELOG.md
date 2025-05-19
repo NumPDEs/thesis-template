@@ -12,3 +12,4 @@ Alle nennenswerten Änderungen an diesen Templates werden in dieser Datei dokume
 * Hypersetup-Befehl für Druckversion geändert
 * Metadaten für PDF-Dokument hinzugefügt
 * Änderung des Layouts für Bild- und Tabellenunterschriften
+* Aufzählungsstil angepasst

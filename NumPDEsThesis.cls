@@ -178,6 +178,13 @@
 \pretocmd{\refname}{\large}{}{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Setze Aufzählungsstil
+
+\setlist[enumerate, 1]{label={\upshape(\roman*)}}
+\setlist[enumerate, 2]{label={\upshape(\alph*)}}
+\setlist[enumerate, 3]{label={\upshape(\Roman*)}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bild- und Tabellenunterschriften
 
 \counterwithout{figure}{chapter}		% Durchgehende Nummerierung der Abbildungen (ohne Kapitelnummer)
