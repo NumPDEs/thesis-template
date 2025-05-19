@@ -124,6 +124,20 @@
           \item Elementare Rechnungen können Sie ggf.\ in einem Appendix sammeln, wenn diese den Lesefluss stören würden (d.h.\ in einem eigenen Abschnitt am Ende der Arbeit, der mit \verb$\appendix$ \emph{vor} den folgenden Gliederungsbefehlen \verb$\chapter{...}$ bzw.\ \verb$\section{...}$ eingeleitet wird).
         \end{itemize}
 
+  \item Spezielle Annahmen oder Axiome können Sie folgendermaßen mittels \verb$enumerate$-Umgebung auflisten:
+  
+  \begin{enumerate}[itemsep=-.5ex,partopsep=1ex,parsep=1ex,leftmargin=*,labelindent=2ex,label=\upshape\bfseries(A\arabic*), ref=\ensuremath{\mathrm{A\arabic*}}]
+    \item\label{axiom:stability}
+      \textbf{Stabilität:}\; $|\eta_H(\mathcal{U}_H, v_H) - \eta_h(\mathcal{U}_H, v_h)| \leq C_{\textnormal{stab}} \, \vvvert v_h - v_H \vvvert$
+    \item\label{axiom:reduction}
+      \textbf{Reduktion:}\; $\eta_h(\mathcal{T}_h \setminus \mathcal{T}_H, v_H) \leq q_{\textnormal{red}} \, \eta_H(\mathcal{T}_H \setminus \mathcal{T}_h, v_H)$
+    \item\label{axiom:reliability}
+      \textbf{Zuverlässigkeit:}\; $\vvvert u^\star - u_H^\star \vvvert \leq C_{\textnormal{rel}} \, \eta_H(u_H^\star)$
+  \end{enumerate}
+
+  Das macht die Aussagen referenzierbar und Sie können mittels \verb$\eqref$ auf die Annahme referenzieren,
+  z.B. \emph{Aus der Stabilität \eqref{axiom:stability} folgt ...}.
+
   \item Bei Abschätzungen können Sie z.B.\ mittels \verb$\stackrel{\eqref{eq:formel}}{\le}$ beziehungsweise dem vordefinierten Makro \verb$\eqreff{eq:formel}{\le}$ Hinweise geben, dass diese Abschätzung aus der Formel mit \verb$\label{eq:formel}$ folgt, z.B.
         \begin{equation*}
           \textup{LHS} \eqreff{eq:hoelder}{\le} \textup{RHS}.
@@ -133,12 +147,10 @@
   \item Bei mehrzeiligen Formeln sollten Sie die Gleichheitszeichen untereinander ausrichten. Dies erreichen Sie mittels der vordefinierten \verb$\eqreff*{eq:formel}{\le}$-Umgebung, z.B.
         \begin{align*}
           \textup{LHS} \  & \eqreff*{eq:hoelder}{\le} \ \textup{RHS}_1  \\
-                          & \eqreff*{eq:hoelder}{\le} \ \textup{RHS}_2.
+                          & \eqreff*{axiom:stability}{\le} \ \textup{RHS}_2.
         \end{align*}
         Das ist insbesondere bei umfangreichen Abschätzungen sehr hilfreich. Sie müssen dann aber
         manuell Abstände vor und nach dem Gleichheitszeichen einfügen, z.B.\ \verb$LHS \ \eqreff*{eq:hoelder}{\le} \ RHS_1$.
-
-  
 
   \item Ein Beweis sollte nie mit einer Formel enden, sondern mit Text, z.B.\ \emph{womit die Abschätzung {\normalfont(1.3)} gezeigt ist.}
 \end{itemize}
