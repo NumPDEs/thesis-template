@@ -11,3 +11,4 @@ Alle nennenswerten Änderungen an diesen Templates werden in dieser Datei dokume
 * `revision`-Befehl angepasst (macht Strich am Rand wenn `\revision` verwendet wird)
 * Hypersetup-Befehl für Druckversion geändert
 * Metadaten für PDF-Dokument hinzugefügt
+* Änderung des Layouts für Bild- und Tabellenunterschriften

@@ -97,7 +97,7 @@
 		\pgfmathsetmacro{\lnyA}{\ymin*(1-\yArel)+\ymax*\yArel} % in [ymin,ymax].
 		\pgfmathsetmacro{\lnxB}{\xmin*(1-\xBrel)+\xmax*\xBrel} % in [xmin,xmax].
 		\pgfmathsetmacro{\lnyB}{\lnyA+#5*(\lnxB-\lnxA)}
-		\pgfmathsetmacro{\yBrel}{\lnyB-\ymin)/(\ymax-\ymin)}
+		\pgfmathsetmacro{\yBrel}{(\lnyB-\ymin)/(\ymax-\ymin)}
 
 		% Define coordinates for \draw. MIND THE 'rel axis cs' as opposed to the 'axis cs'.
 		\coordinate (A) at (rel axis cs:\xArel,\yArel);
@@ -177,13 +177,20 @@
 \pretocmd{\@bibtitlestyle}{\vskip1em}{}{}
 \pretocmd{\refname}{\large}{}{}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bild- und Tabellenunterschriften
+
+\counterwithout{figure}{chapter}		% Durchgehende Nummerierung der Abbildungen (ohne Kapitelnummer)
+\counterwithout{table}{chapter}			% Durchgehende Nummerierung der Tabellen (ohne Kapitelnummer)
+\RequirePackage[format=plain]{caption}	% Lade Paket für Bildunterschriften
+\RequirePackage{subcaption}				% Lade Paket für Unterabbildungen
+\captionsetup{width=0.9\textwidth}		% Setze Breite der Bildunterschrift auf 90% der Textbreite
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Umgebung für Algorithmen
 
 \newtheorem{algorithm}{Algorithm}
 \renewcommand*{\thealgorithm}{\Alph{algorithm}}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Mathematische Umgebungen
