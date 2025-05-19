@@ -14,3 +14,4 @@ Alle nennenswerten Änderungen an diesen Templates werden in dieser Datei dokume
 * Änderung des Layouts für Bild- und Tabellenunterschriften
 * Aufzählungsstil angepasst
 * Beispiel für Algorithmus-Umgebung hinzugefügt
+* Daten für PGFPlot werden aus einer CSV-Datei geladen

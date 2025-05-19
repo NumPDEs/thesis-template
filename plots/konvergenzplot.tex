@@ -1,18 +1,6 @@
 % Fügen Sie hier Ihre Daten ein, die Sie zum Beispiel aus Matlab oder Python 
 % als csv Datei exportiert haben
-\pgfplotstableread[col sep = comma]{
-    nDofs,  estimator
-    41,     2.31414e-02
-    73,     1.47569e-02
-    137,     8.54214e-03
-    278,     4.39263e-03
-    558,     2.30667e-03
-    1115,     1.16646e-03
-    2244,     5.89691e-04
-    4622,     2.90811e-04
-    9174,     1.48216e-04
-    19063,     7.18022e-05
-}{\ErsterDatensatz}%
+\pgfplotstableread[col sep = comma]{plots/daten.csv}{\ErsterDatensatz}%
 
 \begin{tikzpicture}[scale=1]
     \begin{loglogaxis}[
