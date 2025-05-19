@@ -202,6 +202,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Mathematische Umgebungen
 
+% Verwenden Sie newtheorem, um neue Umgebungen zu definieren
+% \theoremstyle{plain} ist der Standardstil (kursiv)
+% \theoremstyle{definition} bewirkt, dass der Text normal ist
+% Mit \newtheoremstyle können Sie gegebenfalls eigene Stile definieren
+
 \theoremstyle{plain}
 \newtheorem{satz}{Satz}[chapter]
 \newtheorem{lemma}[satz]{Lemma}

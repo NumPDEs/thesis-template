@@ -41,7 +41,9 @@
 
   \item Lemmata, Sätze, Proposition etc.\ sollten alle gemeinsam gezählt/nummeriert werden (d.h.\ es gibt in dem Dokument \emph{nicht} Lemma~1 und Satz~1). Dadurch lassen sich Resultate im Dokument für den Leser leichter finden. Ggf.\ können Sie das Kapitel in den Zähler einbinden (z.B.\ Satz 3.5).
         \begin{itemize}
-          \item Am einfachsten ist dazu die Verwendung von \verb$\newtheorem$.
+          \item Am einfachsten ist dazu die Verwendung von \verb$\newtheorem$. 
+          Im Klassenfile sind bereits die wichtigsten Umgebungen definiert. 
+          \item Verwendung: \verb$\begin{satz} ... \end{satz}$.
         \end{itemize}
 
   \item Nur wichtige Formeln kriegen eine Nummer. Das sind üblicherweise Formeln in Sät\-zen, Lemmata etc.\ sowie Formeln, auf die Sie im Beweis referenzieren.
@@ -83,6 +85,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
+
+  \item Verwenden Sie die Beweisumgebung \verb$\begin{proof} ... \end{proof}$.
+        \begin{itemize}
+          \item Verwenden Sie \verb$\begin{proof}[Text] ... \end{proof}$, 
+          wenn Sie den Beweis nicht mit "`Beweis"' beginnen möchten.
+          \item Beispiel: Wenn Sie "`Beweis zu Lemma~XY"' schreiben möchten.
+        \end{itemize}
 
   \item Um die Lesbarkeit der Arbeit zu erhöhen, sollten Beweise deduktiv formuliert werden. Dadurch kann der Leser der Argumentation leichter folgen.
         \begin{itemize}
@@ -219,20 +228,18 @@
   \item Wenn Sie ein Buch zitieren, geben Sie bitte mittels \verb$\cite[Section~X]{buchY}$
         den Abschnitt an. Häufig ist es besser, Abschnitte zu zitieren als Seitennummern.
 
-  \item Verwenden Sie \verb$BibTeX$ (siehe \verb$literature.bib$ in diesem Template)!
+  \item Verwenden Sie \verb$BibLaTeX$ (siehe \verb$literature.bib$ in diesem Template)!
         \begin{itemize}
           \item Alternativ können Sie auch die \verb$thebibliography$-Umgebung verwenden. Achten Sie in diesem Fall darauf, dass Sie die vollständigen bibliographischen Daten angeben (Artikel: Autoren, Titel, Zeitschrift, Band, Jahr, Seiten; Buch: Autoren, Titel, Verlag, Verlagsort, Auflage, Jahr), alle Einträge \emph{einheitlich} formatieren und alphabetisch sortieren.
         \end{itemize}
 
-  \item Die \verb$BibTeX$-Einträge können Sie aus \verb$http://www.ams.org/mathscinet/$ mittels Copy'n'Paste überneh\-men.
-  \item Auch wenn Sie die \verb$BibTeX$-Einträge aus \verb$http://www.ams.org/mathscinet/$ über\-neh\-men, sollten Sie darauf achten, dass am Ende die Einträge \emph{einheitlich} sind:
+  \item Die \verb$BibLaTeX$-Einträge können Sie aus \url{http://www.ams.org/mathscinet/} mittels Copy'n'Paste überneh\-men.
+  \item Auch wenn Sie die \verb$BibLaTeX$-Einträge aus \url{http://www.ams.org/mathscinet/} über\-neh\-men, sollten Sie darauf achten, dass am Ende die Einträge \emph{einheitlich} sind:
         \begin{itemize}
           \item Bei Vornamen von Autoren entweder alle abkürzen oder alle ausschreiben.
           \item Bei Journal-Namen entweder bei allen den vollständigen Namen angeben oder
-                bei allen die offizielle Abkürzung gemäß \verb$http://www.ams.org/mathscinet/$ verwenden.
+                bei allen die offizielle Abkürzung gemäß \url{http://www.ams.org/mathscinet/} verwenden.
         \end{itemize}
-
-  \item siehe auch die Vorlesungsfolien auf \verb$http://www.asc.tuwien.ac.at/compmath/.$
 
 \end{itemize}
 
