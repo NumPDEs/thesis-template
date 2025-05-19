@@ -17,13 +17,13 @@
 \RequirePackage{mathtools}
 \RequirePackage{xspace}
 \RequirePackage{pgffor}
+\RequirePackage{marginnote}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Revision command
 
-\def\revision#1{{\color{red}#1}}
-
+\def\revision#1{\marginnote{\color{pyRed}\textnormal{\textbf{|}}}{\color{pyRed}#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Einige nützliche und empfohlene mathematische Operatoren und Symbole
